@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/gson-2.10.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/gson-2.10-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/gson-2.10-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/mysql-connector-j-8.0.31.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/mysql-connector-j-8.0.31-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/mysql-connector-j-8.0.31-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/slf4j-api-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-handler-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-handler-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-handler-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-resolver-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-resolver-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-resolver-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/slf4j-nop-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-common-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-common-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-common-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-buffer-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-buffer-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-buffer-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-codec-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-codec-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-codec-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-codec-http-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-codec-http-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-codec-http-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-transport-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-transport-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-transport-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-transport-native-epoll-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-transport-native-epoll-4.1.86.Final-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-transport-native-unix-common-4.1.86.Final.jar" sourcepath="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/source/netty-transport-native-unix-common-4.1.86.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Shashwat%20Pandey/eclipse-workspace/ChatOnGoServer/javadoc/netty-transport-native-unix-common-4.1.86.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/jackson-annotations-2.14.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/jackson-core-2.14.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/jackson-databind-2.14.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Shashwat Pandey/eclipse-workspace/ChatOnGoServer/lib/netty-socketio-1.7.23.jar" sourcepath="source/netty-socketio-1.7.23-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
