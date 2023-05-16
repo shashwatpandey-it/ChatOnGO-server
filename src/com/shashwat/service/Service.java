@@ -52,6 +52,7 @@ public class Service {
 			@Override
 			public void onConnect(SocketIOClient arg0) {
 				textArea.append(">> client connected . . .\n");
+				System.out.println(">> client connected . . .");
 			}
 		});
 		
@@ -60,6 +61,7 @@ public class Service {
 			@Override
 			public void onDisconnect(SocketIOClient arg0) {
 				textArea.append(">> client disconnected . . .\n");
+				System.out.println(">> client disconnected . . .");
 			}
 		});
 		
@@ -70,7 +72,8 @@ public class Service {
 				
 				RegistryStatusModel statusModel = DatabaseFunctions.getDatabaseFunctions().checkAndInsert(arg1);
 				arg2.sendAckData(statusModel);
-				textArea.append("user : "+arg1.getUserName()+" password : "+arg1.getPassword()+"\n");
+				textArea.append("user : "+arg1.getUserName()+" trying to register . . .\n");
+				System.out.println("user : "+arg1.getUserName()+" trying to register . . .");
 			}
 			
 		});
@@ -83,6 +86,7 @@ public class Service {
 				LoginStatusModel statusModel = DatabaseFunctions.getDatabaseFunctions().validateLogin(arg1);
 				arg2.sendAckData(statusModel); 
 				textArea.append(arg1.getUserName()+" : login status : "+statusModel.getMessage()+"\n");
+				System.out.println(arg1.getUserName()+" : login status : "+statusModel.getMessage());
 				UserAccountModel userAccount = new UserAccountModel(statusModel.getUserId(), arg1.getUserName(), true);
 				addClient(userAccount, arg0);
 				server.getBroadcastOperations().sendEvent("listUsers", userAccount);
@@ -105,6 +109,7 @@ public class Service {
 			public void onData(SocketIOClient client, Integer data, AckRequest ackSender) throws Exception {
 				boolean performedLogout = DatabaseFunctions.getDatabaseFunctions().logout(data);
 				textArea.append("logout status: "+performedLogout+"\n");
+				System.out.println("logout status: "+performedLogout);
 				UserAccountModel userAccountModel = removeClient(client);
 				server.getBroadcastOperations().sendEvent("updateUsersList", userAccountModel);
 				ackSender.sendAckData("ok");
@@ -132,6 +137,7 @@ public class Service {
 		server.start();
 		
 		textArea.append(">> Server started on port number: "+PORT_NUMBER+" . . .\n");
+		System.out.println(">> Server started on port number: "+PORT_NUMBER+" . . .");
 		
 	}
 	

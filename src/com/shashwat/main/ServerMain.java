@@ -65,6 +65,7 @@ public class ServerMain extends JFrame{
 			
 			DatabaseConnector.getDatabaseConnector().connectToDatabase();
 			text.append(">> Connection to database successful . . .\n");
+			System.out.println(">> Connection to database successful . . .");
 
 			Service.getService(text).startService();
 			
