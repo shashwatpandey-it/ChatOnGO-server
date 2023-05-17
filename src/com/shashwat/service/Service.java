@@ -1,9 +1,6 @@
 package com.shashwat.service;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.swing.JTextArea;
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
@@ -25,19 +22,17 @@ public class Service {
 	private static Service instance;
 	private SocketIOServer server;
 	private final int PORT_NUMBER = 9999;
-	private JTextArea textArea;
 	private List<ClientLoggedIn> clientList;					// to maintain a list of logged in clients on the server side
 	private int clients = 0;
  	
-	public static Service getService(JTextArea textArea) {
+	public static Service getService() {
 		if (instance == null) {
-			instance = new Service(textArea);
+			instance = new Service();
 		}
 		return instance;
 	}
 	
-	private Service(JTextArea textArea) {
-		this.textArea = textArea;
+	private Service() {
 		clientList = new ArrayList<>();
 	}
 	
@@ -51,7 +46,6 @@ public class Service {
 			
 			@Override
 			public void onConnect(SocketIOClient arg0) {
-				textArea.append(">> client connected . . .\n");
 				System.out.println(">> client connected . . .");
 			}
 		});
@@ -60,7 +54,6 @@ public class Service {
 			
 			@Override
 			public void onDisconnect(SocketIOClient arg0) {
-				textArea.append(">> client disconnected . . .\n");
 				System.out.println(">> client disconnected . . .");
 			}
 		});
@@ -72,7 +65,6 @@ public class Service {
 				
 				RegistryStatusModel statusModel = DatabaseFunctions.getDatabaseFunctions().checkAndInsert(arg1);
 				arg2.sendAckData(statusModel);
-				textArea.append("user : "+arg1.getUserName()+" trying to register . . .\n");
 				System.out.println("user : "+arg1.getUserName()+" trying to register . . .");
 			}
 			
@@ -85,7 +77,6 @@ public class Service {
 				
 				LoginStatusModel statusModel = DatabaseFunctions.getDatabaseFunctions().validateLogin(arg1);
 				arg2.sendAckData(statusModel); 
-				textArea.append(arg1.getUserName()+" : login status : "+statusModel.getMessage()+"\n");
 				System.out.println(arg1.getUserName()+" : login status : "+statusModel.getMessage());
 				UserAccountModel userAccount = new UserAccountModel(statusModel.getUserId(), arg1.getUserName(), true);
 				addClient(userAccount, arg0);
@@ -108,7 +99,6 @@ public class Service {
 			@Override
 			public void onData(SocketIOClient client, Integer data, AckRequest ackSender) throws Exception {
 				boolean performedLogout = DatabaseFunctions.getDatabaseFunctions().logout(data);
-				textArea.append("logout status: "+performedLogout+"\n");
 				System.out.println("logout status: "+performedLogout);
 				UserAccountModel userAccountModel = removeClient(client);
 				server.getBroadcastOperations().sendEvent("updateUsersList", userAccountModel);
@@ -136,14 +126,13 @@ public class Service {
 		
 		server.start();
 		
-		textArea.append(">> Server started on port number: "+PORT_NUMBER+" . . .\n");
 		System.out.println(">> Server started on port number: "+PORT_NUMBER+" . . .");
 		
 	}
 	
 	private void addClient(UserAccountModel user, SocketIOClient client) {
 		clientList.add(new ClientLoggedIn(user, client));
-		textArea.append("number of clients : "+Integer.toString(++clients)+ "\n");
+		System.out.println("number of clients : "+Integer.toString(++clients));
 	}
 	
 	private UserAccountModel removeClient(SocketIOClient client) {
@@ -152,7 +141,7 @@ public class Service {
 			if(clientLoggedIn.getClient() == client) {
 				userAccountModel = clientLoggedIn.getUserAccount();
 				clientList.remove(clientLoggedIn);
-				textArea.append("number of clients : "+Integer.toString(--clients)+ "\n");
+				System.out.println("number of clients : "+Integer.toString(--clients));
 				return userAccountModel;
 			}
 		}
